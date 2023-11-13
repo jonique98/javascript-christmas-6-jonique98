@@ -37,3 +37,5 @@ class Order {
 		return this.#orderPrice.priceForPrint();
 	}
 }
+
+export default Order;
