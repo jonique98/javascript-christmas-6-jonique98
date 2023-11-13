@@ -9,6 +9,18 @@ class OrderMenu {
 		this.#menu = menu;
 	}
 
+	mainMenuNumber() {
+		let mainMenuCounter = 0;
+
+		// eslint-disable-next-line no-restricted-syntax
+		for (const food in this.#menu) {
+			// eslint-disable-next-line no-prototype-builtins
+			if (MENU.메인.hasOwnProperty(food)) mainMenuCounter += this.#menu[food];
+		}
+
+		return mainMenuCounter;
+	}
+
 	#validateMenu(menu) {
 		const categories = new Set(Object.keys(menu).map(food => Utils.findFoodCategory(food)));
 
