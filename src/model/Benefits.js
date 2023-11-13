@@ -17,6 +17,14 @@ class Benefits {
 		this.#discountPrice += weekdayDiscount;
 		return weekdayDiscount;
 	}
+
+	christmasDiscount(dateBeforeChristmas) {
+		const christmasDiscount =
+			DISCOUNT.christmasDefaultDiscount + DISCOUNT.christmasDailyDiscount * dateBeforeChristmas;
+		this.#totalBenefit += christmasDiscount;
+		this.#discountPrice += christmasDiscount;
+		return christmasDiscount;
+	}
 }
 
 export default Benefits;
