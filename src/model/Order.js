@@ -28,4 +28,12 @@ class Order {
 	canGetGiveaway() {
 		return this.#orderPrice.canGetGiveaway();
 	}
+
+	menuForPrint() {
+		return this.#orderMenu.menuForPrint();
+	}
+
+	priceForPrint() {
+		return this.#orderPrice.priceForPrint();
+	}
 }
