@@ -33,6 +33,16 @@ class OrderMenu {
 		return desertMenuCounter;
 	}
 
+	menuForPrint() {
+		const result = [];
+
+		// eslint-disable-next-line no-restricted-syntax, guard-for-in
+		for (const food in this.#menu) {
+			result.push(`${food} ${this.#menu[food]}${SIGN.countPreffix}`);
+		}
+		return result;
+	}
+
 	#validateMenu(menu) {
 		const categories = new Set(Object.keys(menu).map(food => Utils.findFoodCategory(food)));
 
