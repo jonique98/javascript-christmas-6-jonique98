@@ -30,8 +30,17 @@ class OrderPrice {
 			}
 		}
 
-		return 0; // 메뉴를 찾지 못한 경우 가격은 0으로 처리
+		return 0;
 	}
+
+	canGetBenefit() {
+		return this.#price >= 10000;
+	}
+
+	canGetGiveaway() {
+		return this.#price >= 120000;
+	}
+
 }
 
 export default OrderPrice;
