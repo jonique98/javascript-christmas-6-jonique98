@@ -197,6 +197,35 @@ __canGetGiveaway()__
 
 ---
 
+## Planner.js
+
+### 🔬variable
+
+	- #benefits - Benefits class 객체
+	- #date - Date class 객체
+	- #order - Order class 객체
+
+
+### 🛠주요 메소드
+
+__initDate(date)__
+
+	- Date class 객체 초기화
+
+__takeOrder(orderString)__
+
+	- Order class 객체 초기화하는걸 주문을 받는다고 추상화
+
+	__benefits()__
+
+	- 각 클래스의 메소드를 적절히 활용해서 모든 혜택을 계산
+	- 각 혜택값을 문자열 배열로 반환
+
+	__benefit관련 메소드__
+
+	- 각 메소드는 benefits의 메소드를 활용함
+	- 혜택 조건에 따라 date와 order의 boolean값 및 메세지 반환 메소드를 호출함
+
 ## InputView.js ##
 
   - Console.readLineAsync()를 활용해 입력을 담당하는 클래스
