@@ -37,6 +37,17 @@ class App {
 			}
 		}
 	}
+
+	printplanner(planner) {
+		OutputView.printDateEventMessage(planner.dateEventMessage());
+		OutputView.printMenu(planner.orderMenu());
+		OutputView.printPriceBeforeBenefits(planner.priceBeforeBenefits());
+		OutputView.printGiveaway(planner.giveawayEvent());
+		OutputView.printBenefitsList(planner.benefits());
+		OutputView.printBenefitsPrice(planner.totalBenefitsPrice());
+		OutputView.printPriceAfterBenefits(planner.priceAfterBenefits());
+		OutputView.printEventBadge(planner.eventBadge());
+	}
 }
 
 export default App;
