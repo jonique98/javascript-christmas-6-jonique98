@@ -16,6 +16,10 @@ class Planner {
 		this.#order = new Order(orderString);
 	}
 
+	orderMenu() {
+		return this.#order.menuForPrint();
+	}
+
 	dateEventMessage() {
 		return this.#date.dateEventMessage();
 	}
@@ -92,3 +96,5 @@ class Planner {
 		return this.#benefits.eventBadge();
 	}
 }
+
+export default Planner;
