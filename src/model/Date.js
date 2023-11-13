@@ -8,6 +8,18 @@ class Date {
 		this.#date = Number(date);
 	}
 
+	dateIsWeekend() {
+		return DAY.weekend.includes(this.#date);
+	}
+
+	dateIsSpecialDay() {
+		return DAY.starDay.includes(this.#date);
+	}
+
+	dateEventMessage() {
+		return `${MONTH} ${this.#date}`;
+	}
+
 	#validate(date) {
 		const dateToNumber = Number(date);
 
