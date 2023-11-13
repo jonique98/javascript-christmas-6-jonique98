@@ -10,6 +10,13 @@ class Benefits {
 		this.#discountPrice += weekendDiscount;
 		return weekendDiscount;
 	}
+
+	weekdayDiscount(desertOrder) {
+		const weekdayDiscount = DISCOUNT.dateDiscount * desertOrder;
+		this.#totalBenefit += weekdayDiscount;
+		this.#discountPrice += weekdayDiscount;
+		return weekdayDiscount;
+	}
 }
 
 export default Benefits;
