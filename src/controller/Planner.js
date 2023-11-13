@@ -16,6 +16,10 @@ class Planner {
 		this.#order = new Order(orderString);
 	}
 
+	dateEventMessage() {
+		return this.#date.dateEventMessage();
+	}
+
 	benefits() {
 		this.#benefits = new Benefits();
 		if (!this.#order.canGetBenefit()) return [SIGN.noBenefit];
@@ -66,5 +70,21 @@ class Planner {
 	giveawayEvent() {
 		if (this.#order.canGetGiveaway()) return BENEFITMESSAGE.champagne;
 		return SIGN.noBenefit;
+	}
+
+	priceBeforeBenefits() {
+		return `${this.#order.priceForPrint().toLocaleString()}`;
+	}
+
+	totalBenefitsPrice() {
+		const totalBenefitsPrice = this.#benefits.totalBenefitForPrint();
+		if (totalBenefitsPrice === 0) return `${SIGN.zero}${SIGN.moneyPreffix}`;
+		return `${SIGN.minus}${totalBenefitsPrice.toLocaleString()}${SIGN.moneyPreffix}`;
+	}
+
+	priceAfterBenefits() {
+		return `${(
+			this.#order.priceForPrint() - this.#benefits.discountPriceForPrint()
+		).toLocaleString()}${SIGN.moneyPreffix}`;
 	}
 }
