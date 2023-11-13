@@ -65,3 +65,22 @@ const DISCOUNT = {
 	specialDiscount: 1000,
 	giveaway: 25000,
 };
+
+const DAY = {
+	firstDay: 1,
+	starDay: [3, 10, 17, 24, 25, 31],
+	weekend: [1, 2, 8, 9, 15, 16, 22, 23, 29, 30],
+	christmas: 25,
+};
+
+const BADGE = {
+	firstPrice: 20000,
+	secondPrice: 10000,
+	thirdPrice: 5000,
+	first: '산타',
+	second: '트리',
+	third: '별',
+	none: '없음',
+};
+
+export { DISCOUNT, DAY, MENU, ERROR, OUTPUTMESSAGE, BENEFITMESSAGE, SIGN, BADGE, MONTH };
