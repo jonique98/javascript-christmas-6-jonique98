@@ -32,6 +32,30 @@ const OutputView = {
                 Console.print(message);
         }
     )},
+
+    printBenefitsPrice(benefitsPrice) {
+        Console.print(OUTPUTMESSAGE.benefitsPrice);
+        Console.print(`${benefitsPrice}`);
+    },
+
+    printPriceAfterBenefits(priceAfterBenefits) {
+        Console.print(OUTPUTMESSAGE.priceAfterBenefits);
+        Console.print(`${priceAfterBenefits}`);
+    },
+
+    printEventBadge(eventBadge) {
+        Console.print(OUTPUTMESSAGE.eventBadge);
+        Console.print(eventBadge);
+    },
+
+    printDateError() {
+        Console.print(ERROR.date);
+    },
+
+    printOrderError() {
+        Console.print(ERROR.order);
+    }
+
 }
 
 export default OutputView;
