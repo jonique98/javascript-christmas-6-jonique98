@@ -34,6 +34,21 @@ class Benefits {
 		}
 		return 0;
 	}
+
+	giveawayEvent(moreThanTwelveThousand) {
+		if (moreThanTwelveThousand) {
+			this.#totalBenefit += DISCOUNT.giveaway;
+			return DISCOUNT.giveaway;
+		}
+		return 0;
+	}
+
+	eventBadge() {
+		if (this.#totalBenefit >= BADGE.firstPrice) return BADGE.first;
+		if (this.#totalBenefit >= BADGE.secondPrice) return BADGE.second;
+		if (this.#totalBenefit >= BADGE.thirdPrice) return BADGE.third;
+		return BADGE.none;
+	}
 }
 
 export default Benefits;
