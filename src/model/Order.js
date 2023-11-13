@@ -12,4 +12,13 @@ class Order {
 		this.#orderMenu = new OrderMenu(menu);
 		this.#orderPrice = new OrderPrice(menu);
 	}
+
+	mainMenuNumber() {
+		return this.#orderMenu.mainMenuNumber();
+	}
+
+	desertMenuNumber() {
+		return this.#orderMenu.desertMenuNumber();
+	}
+
 }
