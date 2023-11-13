@@ -87,4 +87,8 @@ class Planner {
 			this.#order.priceForPrint() - this.#benefits.discountPriceForPrint()
 		).toLocaleString()}${SIGN.moneyPreffix}`;
 	}
+
+	eventBadge() {
+		return this.#benefits.eventBadge();
+	}
 }
