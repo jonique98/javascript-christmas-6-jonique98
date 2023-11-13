@@ -49,6 +49,14 @@ class Benefits {
 		if (this.#totalBenefit >= BADGE.thirdPrice) return BADGE.third;
 		return BADGE.none;
 	}
+
+	totalBenefitForPrint() {
+		return this.#totalBenefit;
+	}
+
+	discountPriceForPrint() {
+		return this.#discountPrice;
+	}
 }
 
 export default Benefits;
