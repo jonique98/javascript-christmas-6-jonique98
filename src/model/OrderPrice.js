@@ -41,6 +41,9 @@ class OrderPrice {
 		return this.#price >= 120000;
 	}
 
+	priceForPrint() {
+		return this.#price;
+	}
 }
 
 export default OrderPrice;
