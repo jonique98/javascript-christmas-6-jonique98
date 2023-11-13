@@ -6,7 +6,8 @@ const Utils = {
 		const parsedMenu = {};
 
 		items.forEach(item => {
-			const [food, number] = item.split('-');
+			const [foodString, number] = item.split('-');
+			const food = foodString.trimStart();
 			const foodCategory = this.findFoodCategory(food);
 
 			if (!foodCategory || !number) throw new Error();
