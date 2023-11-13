@@ -25,6 +25,15 @@ class Benefits {
 		this.#discountPrice += christmasDiscount;
 		return christmasDiscount;
 	}
+
+	specialDiscount(specialDay) {
+		if (specialDay) {
+			this.#totalBenefit += DISCOUNT.specialDiscount;
+			this.#discountPrice += DISCOUNT.specialDiscount;
+			return DISCOUNT.specialDiscount;
+		}
+		return 0;
+	}
 }
 
 export default Benefits;
