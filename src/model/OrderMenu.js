@@ -21,6 +21,18 @@ class OrderMenu {
 		return mainMenuCounter;
 	}
 
+	desertMenuNumber() {
+		let desertMenuCounter = 0;
+
+		// eslint-disable-next-line no-restricted-syntax
+		for (const food in this.#menu) {
+			// eslint-disable-next-line no-prototype-builtins
+			if (MENU.디저트.hasOwnProperty(food)) desertMenuCounter += this.#menu[food];
+		}
+
+		return desertMenuCounter;
+	}
+
 	#validateMenu(menu) {
 		const categories = new Set(Object.keys(menu).map(food => Utils.findFoodCategory(food)));
 
