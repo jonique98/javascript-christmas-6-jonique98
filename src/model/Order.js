@@ -21,4 +21,11 @@ class Order {
 		return this.#orderMenu.desertMenuNumber();
 	}
 
+	canGetBenefit() {
+		return this.#orderPrice.canGetBenefit();
+	}
+
+	canGetGiveaway() {
+		return this.#orderPrice.canGetGiveaway();
+	}
 }
