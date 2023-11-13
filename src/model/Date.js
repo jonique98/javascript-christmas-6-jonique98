@@ -16,6 +16,15 @@ class Date {
 		return DAY.starDay.includes(this.#date);
 	}
 
+	dateIsBeforeChristmas() {
+		return this.#date <= DAY.christmas;
+	}
+
+	christmasLeftDate() {
+		if (this.#date > DAY.christmas) return 0;
+		return this.#date - DAY.firstDay;
+	}
+
 	dateEventMessage() {
 		return `${MONTH} ${this.#date}`;
 	}
