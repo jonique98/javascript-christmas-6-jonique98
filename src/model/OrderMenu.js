@@ -54,3 +54,5 @@ class OrderMenu {
 		if (totalItemCount > 20) throw new Error('주문 20개 초과');
 	}
 }
+
+export default OrderMenu;
