@@ -44,7 +44,7 @@ class OrderMenu {
 
   #validateMenu(menu) {
     const categories = new Set(
-      Object.keys(menu).map((food) => Utils.findFoodCategory(food)),
+      Object.keys(menu).map(food => Utils.findFoodCategory(food)),
     );
 
     if (categories.size === 1 && categories.has('음료')) {

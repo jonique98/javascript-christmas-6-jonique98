@@ -5,7 +5,7 @@ const Utils = {
     const items = orderString.split(',');
     const parsedMenu = {};
 
-    items.forEach((item) => {
+    items.forEach(item => {
       const { food, parsedNumber } = this.validateMenuItem(parsedMenu, item);
       parsedMenu[food] = parsedNumber;
     });

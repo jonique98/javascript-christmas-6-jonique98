@@ -12,7 +12,7 @@ const OutputView = {
 
   printMenu(orderMenu) {
     Console.print(OUTPUTMESSAGE.orderMenu);
-    orderMenu.forEach((menu) => Console.print(`${menu}`));
+    orderMenu.forEach(menu => Console.print(`${menu}`));
   },
   printPriceBeforeBenefits(orderPrice) {
     Console.print(OUTPUTMESSAGE.priceBeforeBenefits);
@@ -26,7 +26,7 @@ const OutputView = {
 
   printBenefitsList(message) {
     Console.print(OUTPUTMESSAGE.benefitsList);
-    message.forEach((benefit) => {
+    message.forEach(benefit => {
       if (benefit) Console.print(benefit);
     });
   },
