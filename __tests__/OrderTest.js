@@ -1,8 +1,6 @@
 import Order from "../src/model/Order";
 
 describe("Order 클래스 메소드 테스트", () => {
-  let order;
-
   const invalidInput1 = "해산물파스타2";
   const invalidInput2 = "해산물파스타 -2";
   const invalidInput3 = "해산물파스타-2 레드와인-2";
@@ -12,9 +10,10 @@ describe("Order 클래스 메소드 테스트", () => {
   const moreThanTwentyMenu = "해산물파스타-19,레드와인-2";
 
   const noBenefitMenu = "양송이수프-1";
+  const noGiveawayMenu = "양송이수프-1,아이스크림-1,제로콜라-1";
 
-  const menu1 = "티본스테이크-1,해산물파스타-1,레드와인-1,초코케이크-1";
-  const menu2 = "양송이수프-1,아이스크림-1,제로콜라-1";
+  const menu =
+    "양송이수프-2,티본스테이크-2,해산물파스타-1,레드와인-1,초코케이크-1,아이스크림-2";
 
   test("유효하지 않은 형식 validate 테스트", () => {
     // when
@@ -57,5 +56,29 @@ describe("Order 클래스 메소드 테스트", () => {
 
     const noBenefit = order.canGetBenefit();
     expect(noBenefit).toBe(false);
+  });
+
+  test("증정품이 없는 경우", () => {
+    const order = new Order(noGiveawayMenu);
+
+    const noGiveaway = order.canGetGiveaway();
+    expect(noGiveaway).toBe(false);
+  });
+
+  test("모든 헤택을 받을 수 있는 메뉴에 대해서 메소드 테스트", () => {
+    // given
+    const order = new Order(menu);
+
+    // when
+    const mainMenuNumber = order.mainMenuNumber();
+    const desertMenuNumber = order.desertMenuNumber();
+    const canGetBenefit = order.canGetBenefit();
+    const canGetGiveaway = order.canGetGiveaway();
+
+    // then
+    expect(mainMenuNumber).toBe(3);
+    expect(desertMenuNumber).toBe(3);
+    expect(canGetBenefit).toBe(true);
+    expect(canGetGiveaway).toBe(true);
   });
 });
