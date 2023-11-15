@@ -71,4 +71,18 @@ describe("Date", () => {
     // then
     expect(isChristmas).toBe(false);
   });
+
+  test("크리스마스가 남은 날짜 테스트", () => {
+    // given
+    const christmasEve = new Date(1);
+    const christmas = new Date(25);
+
+    // when
+    const christmasEveLeftDate = christmasEve.christmasLeftDate();
+    const christmasLeftDate = christmas.christmasLeftDate();
+
+    // then
+    expect(christmasEveLeftDate).toBe(0);
+    expect(christmasLeftDate).toBe(24);
+  });
 });
