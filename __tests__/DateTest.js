@@ -13,4 +13,15 @@ describe("Date", () => {
     // then
     expect(isWeekend).toBe(true);
   });
+
+  test("평일 테스트", () => {
+    // given
+    date = new Date(3);
+
+    // when
+    const isWeekend = date.isWeekend();
+
+    // then
+    expect(isWeekend).toBe(false);
+  });
 });
