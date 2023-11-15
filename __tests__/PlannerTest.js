@@ -35,4 +35,17 @@ describe("Planner 클래스 메소드 테스트", () => {
     planner.takeOrder(benefitMenu);
     expect(planner.benefits()).toEqual(result);
   });
+
+  test("메인 메뉴가 없을 때 주말 할인 미적용 테스트", () => {
+    const result = [
+      "",
+      "크리스마스 할인 -1,000원",
+      "",
+      "증정 이벤트 -25,000원",
+    ];
+
+    planner.initDate(weekend);
+    planner.takeOrder(noMainMenu);
+    expect(planner.benefits()).toEqual(result);
+  });
 });
