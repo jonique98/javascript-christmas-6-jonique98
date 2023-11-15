@@ -1,6 +1,6 @@
 import Date from "../src/model/Date.js";
 
-describe("Date", () => {
+describe("Date 클래스 메소드 테스트", () => {
   let date;
 
   test("31일이 넘는 날짜 validate 테스트", () => {

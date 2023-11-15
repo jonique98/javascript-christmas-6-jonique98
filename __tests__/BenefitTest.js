@@ -1,6 +1,6 @@
 import Benefits from "../src/model/Benefits";
 
-describe("Benefits", () => {
+describe("Benefits 클래스 메소드 테스트", () => {
   let benefits;
 
   beforeEach(() => {
