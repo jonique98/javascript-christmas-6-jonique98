@@ -21,4 +21,13 @@ describe("OrderMenu 클래스 메소드 테스트", () => {
     // then
     expect(mainMenuNumber).toBe(4);
   });
+
+  test("디저트 수량 테스트", () => {
+    const orderMenu = new OrderMenu(menu);
+    // when
+    const desertMenuNumber = orderMenu.desertMenuNumber();
+
+    // then
+    expect(desertMenuNumber).toBe(3);
+  });
 });
