@@ -48,4 +48,17 @@ describe("Planner 클래스 메소드 테스트", () => {
     planner.takeOrder(noMainMenu);
     expect(planner.benefits()).toEqual(result);
   });
+
+  test("주중 할인 테스트", () => {
+    const result = [
+      "평일 할인 -2,023원",
+      "크리스마스 할인 -2,100원",
+      "",
+      "증정 이벤트 -25,000원",
+    ];
+
+    planner.initDate(weekday);
+    planner.takeOrder(benefitMenu);
+    expect(planner.benefits()).toEqual(result);
+  });
 });
