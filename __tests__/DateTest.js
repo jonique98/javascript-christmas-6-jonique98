@@ -3,6 +3,39 @@ import Date from "../src/model/Date.js";
 describe("Date", () => {
   let date;
 
+  test("31일이 넘는 날짜 validate 테스트", () => {
+    // given
+    const invalidDate = "32";
+
+    // when
+    const validate = () => new Date(invalidDate);
+
+    // then
+    expect(validate).toThrow();
+  });
+
+  test("1일 미만 날짜 validate 테스트", () => {
+    // given
+    const invalidDate = "0";
+
+    // when
+    const validate = () => new Date(invalidDate);
+
+    // then
+    expect(validate).toThrow();
+  });
+
+  test("숫자가 아닌 날짜 validate 테스트", () => {
+    // given
+    const invalidDate = "a";
+
+    // when
+    const validate = () => new Date(invalidDate);
+
+    // then
+    expect(validate).toThrow();
+  });
+
   test("주말 테스트", () => {
     // given
     date = new Date(1);
