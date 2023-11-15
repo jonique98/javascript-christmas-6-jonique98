@@ -35,4 +35,15 @@ describe("Benefits", () => {
     // then
     expect(christmasDiscount).toBe(1300);
   });
+
+  test("특별 할인", () => {
+    // given
+    const specialDay = true;
+
+    // when
+    const specialDiscount = benefits.specialDiscount(specialDay);
+
+    // then
+    expect(specialDiscount).toBe(1000);
+  });
 });
