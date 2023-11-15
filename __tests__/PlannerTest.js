@@ -21,6 +21,7 @@ describe("Planner 클래스 메소드 테스트", () => {
   const noBenefitMenu = "양송이수프-1,제로콜라-1";
   const noMainMenu = "타파스-3,초코케이크-3,아이스크림-3,레드와인-3";
   const noDesertMenu = "타파스-3,티본스테이크-3,해산물파스타-3,레드와인-3";
+  const edgeMenu = "티본스테이크-1,바비큐립-1";
 
   test("혜택 적용이 없을 때 테스트", () => {
     const result = ["없음"];
@@ -121,6 +122,14 @@ describe("Planner 클래스 메소드 테스트", () => {
 
     planner.initDate(specialDayAfterChristmas);
     planner.takeOrder(benefitMenu);
+    expect(planner.benefits()).toEqual(result);
+  });
+
+  test("엣지케이스 테스트", () => {
+    const result = ["없음"];
+
+    planner.initDate(weekdayAfterChristmas);
+    planner.takeOrder(edgeMenu);
     expect(planner.benefits()).toEqual(result);
   });
 });
