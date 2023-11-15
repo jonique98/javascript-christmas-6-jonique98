@@ -43,4 +43,15 @@ describe("OrderPrice 클래스 메소드 테스트", () => {
     expect(getGiveawayEvent).toBe(true);
     expect(noGiveawayEvent).toBe(false);
   });
+
+  test("주문 금액 출력 테스트", () => {
+    // given
+    const orderPrice = new OrderPrice(menu1);
+
+    // when
+    const priceForPrint = orderPrice.priceForPrint();
+
+    // then
+    expect(priceForPrint).toBe(277000);
+  });
 });
