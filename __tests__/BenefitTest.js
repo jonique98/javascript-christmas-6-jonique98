@@ -1,7 +1,11 @@
 import Benefits from "../src/model/Benefits";
 
 describe("Benefits", () => {
-  const benefits = new Benefits();
+  let benefits;
+
+  beforeEach(() => {
+    benefits = new Benefits();
+  });
 
   test("주말 할인", () => {
     // given
@@ -67,5 +71,32 @@ describe("Benefits", () => {
 
     // then
     expect(giveawayEvent).toBe(0);
+  });
+
+  test("이벤트 배지 산타", () => {
+    // given
+    benefits.weekendDiscount(10);
+
+    const eventBadge = benefits.eventBadge();
+
+    expect(eventBadge).toBe("산타");
+  });
+
+  test("이벤트 배지 트리", () => {
+    // given
+    benefits.weekendDiscount(5);
+
+    const eventBadge = benefits.eventBadge();
+
+    expect(eventBadge).toBe("트리");
+  });
+
+  test("이벤트 배지 별", () => {
+    // given
+    benefits.weekendDiscount(3);
+
+    const eventBadge = benefits.eventBadge();
+
+    expect(eventBadge).toBe("별");
   });
 });
