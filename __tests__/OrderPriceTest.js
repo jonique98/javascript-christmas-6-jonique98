@@ -15,7 +15,7 @@ describe("OrderPrice 클래스 메소드 테스트", () => {
     제로콜라: 1,
   };
 
-  test("메뉴 가격 테스트", () => {
+  test("베네핏 적용 여부 메소드 테스트", () => {
     // given
 
     const getBenefitObject = new OrderPrice(menu1);
@@ -28,5 +28,19 @@ describe("OrderPrice 클래스 메소드 테스트", () => {
     // then
     expect(getBenefit).toBe(true);
     expect(noBenefit).toBe(false);
+  });
+
+  test("경품 이벤트 메소드 테스트", () => {
+    // given
+    const getGiveaway = new OrderPrice(menu1);
+    const noGiveaway = new OrderPrice(menu2);
+
+    // when
+    const getGiveawayEvent = getGiveaway.canGetGiveaway();
+    const noGiveawayEvent = noGiveaway.canGetGiveaway();
+
+    // then
+    expect(getGiveawayEvent).toBe(true);
+    expect(noGiveawayEvent).toBe(false);
   });
 });
