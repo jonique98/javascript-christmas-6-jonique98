@@ -60,4 +60,15 @@ describe("Date", () => {
     expect(isBeforeChristmas).toBe(true);
     expect(isChristmas).toBe(true);
   });
+
+  test("크리스마스 이후 테스트", () => {
+    // given
+    const christmas = new Date(26);
+
+    // when
+    const isChristmas = christmas.isBeforeChristmas();
+
+    // then
+    expect(isChristmas).toBe(false);
+  });
 });
