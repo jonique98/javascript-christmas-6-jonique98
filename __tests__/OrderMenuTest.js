@@ -30,4 +30,12 @@ describe("OrderMenu 클래스 메소드 테스트", () => {
     // then
     expect(desertMenuNumber).toBe(3);
   });
+
+  test("음료만 주문한 경우 validate 테스트", () => {
+    // when
+    const validate = () => new OrderMenu(onlyBeverageMenu);
+
+    // then
+    expect(validate).toThrow();
+  });
 });
