@@ -22,6 +22,7 @@ const MENU = {
 };
 
 const MONTH = "12월";
+const DATE = "일";
 
 const SIGN = {
   emptyString: "",
@@ -93,4 +94,5 @@ export {
   SIGN,
   BADGE,
   MONTH,
+  DATE,
 };

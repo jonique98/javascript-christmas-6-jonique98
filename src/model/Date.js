@@ -1,4 +1,4 @@
-import { DAY, MONTH } from "../constants/constants.js";
+import { DAY, MONTH, DATE } from "../constants/constants.js";
 
 class Date {
   #date;
@@ -26,7 +26,7 @@ class Date {
   }
 
   dateEventMessage() {
-    return `${MONTH} ${this.#date}`;
+    return `${MONTH} ${this.#date}${DATE}`;
   }
 
   #validate(date) {

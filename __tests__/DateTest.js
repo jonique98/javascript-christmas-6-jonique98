@@ -127,6 +127,6 @@ describe("Date", () => {
     const dateEventMessage = date.dateEventMessage();
 
     // then
-    expect(dateEventMessage).toBe("12월 25");
+    expect(dateEventMessage).toBe("12월 25일");
   });
 });
