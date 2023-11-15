@@ -18,9 +18,17 @@ describe("Planner 클래스 메소드 테스트", () => {
 
   const benefitMenu =
     "타파스-3,티본스테이크-3,해산물파스타-3,초코케이크-3,아이스크림-3,레드와인-3";
-  const noBenefitMenu = "양송이수프 1,제로콜라 1";
+  const noBenefitMenu = "양송이수프-1,제로콜라-1";
   const noMainMenu = "타파스-3,초코케이크-3,아이스크림-3,레드와인-3";
   const noDesertMenu = "타파스-3,티본스테이크-3,해산물파스타-3,레드와인-3";
+
+  test("혜택 적용이 없을 때 테스트", () => {
+    const result = ["없음"];
+
+    planner.initDate(weekday);
+    planner.takeOrder(noBenefitMenu);
+    expect(planner.benefits()).toEqual(result);
+  });
 
   test("주말 할인 적용 테스트", () => {
     const result = [
