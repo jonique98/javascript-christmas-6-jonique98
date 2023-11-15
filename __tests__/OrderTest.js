@@ -43,4 +43,12 @@ describe("Order 클래스 메소드 테스트", () => {
     // then
     expect(validate).toThrow();
   });
+
+  test("20개 이상 주문한 경우 validate 테스트", () => {
+    // when
+    const validate = () => new Order(moreThanTwentyMenu);
+
+    // then
+    expect(validate).toThrow();
+  });
 });
