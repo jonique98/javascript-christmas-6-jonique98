@@ -6,26 +6,31 @@ const Utils = {
     const parsedMenu = {};
 
     items.forEach((item) => {
-      const [foodString, number] = item.split("-");
-      const food = foodString.trimStart();
-      const foodCategory = this.findFoodCategory(food);
-
-      if (!foodCategory || !number) throw new Error();
-
-      // eslint-disable-next-line no-prototype-builtins
-      if (parsedMenu.hasOwnProperty(food)) throw new Error();
-
-      parsedMenu[food] = Number(number);
-      if (parsedMenu[food] <= 0 || Number.isNaN(parsedMenu[food]))
-        throw new Error();
+      const { food, parsedNumber } = this.validateMenuItem(parsedMenu, item);
+      parsedMenu[food] = parsedNumber;
     });
+
     return parsedMenu;
+  },
+
+  validateMenuItem(parsedMenu, item) {
+    const [foodString, number] = item.split("-");
+    const food = foodString.trimStart();
+    const foodCategory = this.findFoodCategory(food);
+
+    if (!foodCategory || !number) throw new Error();
+
+    if (parsedMenu.hasOwnProperty(food)) throw new Error();
+
+    const parsedNumber = Number(number);
+    if (parsedNumber <= 0 || Number.isNaN(parsedNumber)) throw new Error();
+
+    return { food, parsedNumber };
   },
 
   findFoodCategory(food) {
     // eslint-disable-next-line no-restricted-syntax
     for (const category in MENU) {
-      // eslint-disable-next-line no-prototype-builtins
       if (MENU[category].hasOwnProperty(food)) {
         return category;
       }

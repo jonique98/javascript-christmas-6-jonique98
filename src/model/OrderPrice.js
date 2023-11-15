@@ -13,7 +13,6 @@ class OrderPrice {
 
     // eslint-disable-next-line no-restricted-syntax
     for (const food in orderMenuArray) {
-      // eslint-disable-next-line no-prototype-builtins
       if (orderMenuArray.hasOwnProperty(food)) {
         price += this.calculateFoodPrice(food, orderMenuArray[food]);
       }
@@ -22,12 +21,10 @@ class OrderPrice {
     return price;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   calculateFoodPrice(food, count) {
     // eslint-disable-next-line no-restricted-syntax
     for (const category in MENU) {
       if (
-        // eslint-disable-next-line no-prototype-builtins
         MENU.hasOwnProperty(category) &&
         MENU[category].hasOwnProperty(food)
       ) {

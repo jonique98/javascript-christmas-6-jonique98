@@ -14,7 +14,6 @@ class OrderMenu {
 
     // eslint-disable-next-line no-restricted-syntax
     for (const food in this.#menu) {
-      // eslint-disable-next-line no-prototype-builtins
       if (MENU.메인.hasOwnProperty(food)) mainMenuCounter += this.#menu[food];
     }
 
@@ -26,7 +25,6 @@ class OrderMenu {
 
     // eslint-disable-next-line no-restricted-syntax
     for (const food in this.#menu) {
-      // eslint-disable-next-line no-prototype-builtins
       if (MENU.디저트.hasOwnProperty(food))
         desertMenuCounter += this.#menu[food];
     }
