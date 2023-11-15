@@ -99,4 +99,13 @@ describe("Benefits", () => {
 
     expect(eventBadge).toBe("별");
   });
+
+  test("이벤트 배지 없음", () => {
+    // given
+    benefits.weekendDiscount(1);
+
+    const eventBadge = benefits.eventBadge();
+
+    expect(eventBadge).toBe("없음");
+  });
 });
