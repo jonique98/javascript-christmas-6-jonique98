@@ -49,12 +49,15 @@ describe("Date", () => {
 
   test("크리스마스 전 테스트", () => {
     // given
-    date = new Date(24);
+    const christmasEve = new Date(24);
+    const christmas = new Date(25);
 
     // when
-    const isBeforeChristmas = date.isBeforeChristmas();
+    const isBeforeChristmas = christmasEve.isBeforeChristmas();
+    const isChristmas = christmas.isBeforeChristmas();
 
     // then
     expect(isBeforeChristmas).toBe(true);
+    expect(isChristmas).toBe(true);
   });
 });
