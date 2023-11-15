@@ -80,6 +80,11 @@ const DAY = {
   christmas: 25,
 };
 
+const BENEFITCONDITION = {
+  minPrice: 10000,
+  giveawayPrice: 120000,
+};
+
 const BADGE = {
   firstPrice: 20000,
   secondPrice: 10000,
@@ -98,6 +103,7 @@ export {
   OUTPUTMESSAGE,
   INPUTMESSAGE,
   BENEFITMESSAGE,
+  BENEFITCONDITION,
   SIGN,
   BADGE,
   MONTH,

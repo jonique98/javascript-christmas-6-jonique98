@@ -1,4 +1,4 @@
-import { MENU } from '../constants/constants.js';
+import { MENU, BENEFITCONDITION } from '../constants/constants.js';
 
 class OrderPrice {
   #price = 0;
@@ -35,11 +35,11 @@ class OrderPrice {
   }
 
   canGetBenefit() {
-    return this.#price >= 10000;
+    return this.#price >= BENEFITCONDITION.minPrice;
   }
 
   canGetGiveaway() {
-    return this.#price >= 120000;
+    return this.#price >= BENEFITCONDITION.giveawayPrice;
   }
 
   priceForPrint() {
