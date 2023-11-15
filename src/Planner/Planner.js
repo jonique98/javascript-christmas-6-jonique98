@@ -1,7 +1,7 @@
-import Date from "../model/Date.js";
-import Order from "../model/Order.js";
-import Benefits from "../model/Benefits.js";
-import { BENEFITMESSAGE, SIGN } from "../constants/constants.js";
+import Date from '../model/Date.js';
+import Order from '../model/Order.js';
+import Benefits from '../model/Benefits.js';
+import { BENEFITMESSAGE, SIGN } from '../constants/constants.js';
 
 class Planner {
   #date;
@@ -47,7 +47,7 @@ class Planner {
 
   weekendBenefit() {
     const weekendBenefit = this.#benefits.weekendDiscount(
-      this.#order.mainMenuNumber()
+      this.#order.mainMenuNumber(),
     );
     if (weekendBenefit === 0) return SIGN.emptyString;
     return `${BENEFITMESSAGE.weekend}${weekendBenefit.toLocaleString()}${
@@ -57,7 +57,7 @@ class Planner {
 
   weekdayBenefit() {
     const weekdayBenefit = this.#benefits.weekdayDiscount(
-      this.#order.desertMenuNumber()
+      this.#order.desertMenuNumber(),
     );
     if (weekdayBenefit === 0) return SIGN.emptyString;
     return `${BENEFITMESSAGE.weekday}${weekdayBenefit.toLocaleString()}${
@@ -68,7 +68,7 @@ class Planner {
   christmasBenefit() {
     if (!this.#date.isBeforeChristmas()) return SIGN.emptyString;
     const christmasBenefit = this.#benefits.christmasDiscount(
-      this.#date.christmasLeftDate()
+      this.#date.christmasLeftDate(),
     );
     return `${BENEFITMESSAGE.christmas}${christmasBenefit.toLocaleString()}${
       SIGN.moneyPreffix
@@ -77,7 +77,7 @@ class Planner {
 
   specialBenefit() {
     const specialBenefit = this.#benefits.specialDiscount(
-      this.#date.isSpecialDay()
+      this.#date.isSpecialDay(),
     );
     if (specialBenefit === 0) return SIGN.emptyString;
     return `${BENEFITMESSAGE.special}${specialBenefit.toLocaleString()}${
@@ -87,7 +87,7 @@ class Planner {
 
   giveawayBenefit() {
     const giveawayBenefit = this.#benefits.giveawayEvent(
-      this.#order.canGetGiveaway()
+      this.#order.canGetGiveaway(),
     );
     if (giveawayBenefit === 0) return SIGN.emptyString;
     return `${BENEFITMESSAGE.giveaway}${giveawayBenefit.toLocaleString()}${

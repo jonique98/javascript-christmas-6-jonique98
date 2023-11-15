@@ -1,6 +1,6 @@
-import OrderMenu from "./OrderMenu.js";
-import OrderPrice from "./OrderPrice.js";
-import Utils from "../utils/Utils.js";
+import OrderMenu from './OrderMenu.js';
+import OrderPrice from './OrderPrice.js';
+import Utils from '../utils/Utils.js';
 
 class Order {
   #orderMenu;

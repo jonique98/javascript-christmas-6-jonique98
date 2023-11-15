@@ -1,6 +1,6 @@
-import InputView from "./view/InputView.js";
-import OutputView from "./view/OutputView.js";
-import Planner from "./Planner/Planner.js";
+import InputView from './view/InputView.js';
+import OutputView from './view/OutputView.js';
+import Planner from './Planner/Planner.js';
 
 class App {
   async run() {

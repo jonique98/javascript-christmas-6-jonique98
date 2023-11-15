@@ -1,4 +1,4 @@
-import { DISCOUNT, BADGE } from "../constants/constants.js";
+import { DISCOUNT, BADGE } from '../constants/constants.js';
 
 class Benefits {
   #totalBenefit = 0;

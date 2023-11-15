@@ -1,8 +1,8 @@
-import { MENU } from "../constants/constants.js";
+import { MENU } from '../constants/constants.js';
 
 const Utils = {
   menuParser(orderString) {
-    const items = orderString.split(",");
+    const items = orderString.split(',');
     const parsedMenu = {};
 
     items.forEach((item) => {
@@ -14,7 +14,7 @@ const Utils = {
   },
 
   validateMenuItem(parsedMenu, item) {
-    const [foodString, number] = item.split("-");
+    const [foodString, number] = item.split('-');
     const food = foodString.trimStart();
     const foodCategory = this.findFoodCategory(food);
 

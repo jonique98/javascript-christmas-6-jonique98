@@ -1,5 +1,4 @@
-/* eslint-disable no-prototype-builtins */
-import { MENU } from "../constants/constants.js";
+import { MENU } from '../constants/constants.js';
 
 class OrderPrice {
   #price = 0;
