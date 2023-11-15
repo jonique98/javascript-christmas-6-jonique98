@@ -38,4 +38,28 @@ describe("OrderMenu 클래스 메소드 테스트", () => {
     // then
     expect(validate).toThrow();
   });
+
+  test("20개 이상 주문한 경우 validate 테스트", () => {
+    // when
+    const validate = () => new OrderMenu(moreThanTwentyMenu);
+
+    // then
+    expect(validate).toThrow();
+  });
+
+  test("메뉴 프린트 테스트", () => {
+    const orderMenu = new OrderMenu(menu);
+    // given
+    const menuForPrint = orderMenu.menuForPrint();
+
+    // then
+    expect(menuForPrint).toEqual([
+      "양송이수프 2개",
+      "티본스테이크 2개",
+      "해산물파스타 2개",
+      "레드와인 1개",
+      "초코케이크 1개",
+      "아이스크림 2개",
+    ]);
+  });
 });
