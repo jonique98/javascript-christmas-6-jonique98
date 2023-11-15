@@ -118,4 +118,15 @@ describe("Date", () => {
     expect(christmasEveLeftDate).toBe(0);
     expect(christmasLeftDate).toBe(24);
   });
+
+  test("이벤트 메시지 테스트", () => {
+    // given
+    const date = new Date(25);
+
+    // when
+    const dateEventMessage = date.dateEventMessage();
+
+    // then
+    expect(dateEventMessage).toBe("12월 25");
+  });
 });
