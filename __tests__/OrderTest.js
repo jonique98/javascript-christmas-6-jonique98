@@ -51,4 +51,11 @@ describe("Order 클래스 메소드 테스트", () => {
     // then
     expect(validate).toThrow();
   });
+
+  test("혜택이 없는 경우", () => {
+    const order = new Order(noBenefitMenu);
+
+    const noBenefit = order.canGetBenefit();
+    expect(noBenefit).toBe(false);
+  });
 });
