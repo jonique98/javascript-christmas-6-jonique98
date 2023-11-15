@@ -57,4 +57,15 @@ describe("Benefits", () => {
     // then
     expect(giveawayEvent).toBe(25000);
   });
+
+  test("증정 이벤트 없음", () => {
+    // given
+    const moreThanTwelveThousand = false;
+
+    // when
+    const giveawayEvent = benefits.giveawayEvent(moreThanTwelveThousand);
+
+    // then
+    expect(giveawayEvent).toBe(0);
+  });
 });
