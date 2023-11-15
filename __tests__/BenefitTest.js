@@ -24,4 +24,15 @@ describe("Benefits", () => {
     // then
     expect(weekdayDiscount).toBe(10115);
   });
+
+  test("크리스마스 할인", () => {
+    // given
+    const dateBeforeChristmas = 3;
+
+    // when
+    const christmasDiscount = benefits.christmasDiscount(dateBeforeChristmas);
+
+    // then
+    expect(christmasDiscount).toBe(1300);
+  });
 });
