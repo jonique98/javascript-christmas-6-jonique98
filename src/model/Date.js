@@ -8,15 +8,15 @@ class Date {
     this.#date = Number(date);
   }
 
-  dateIsWeekend() {
+  isWeekend() {
     return DAY.weekend.includes(this.#date);
   }
 
-  dateIsSpecialDay() {
+  isSpecialDay() {
     return DAY.starDay.includes(this.#date);
   }
 
-  dateIsBeforeChristmas() {
+  isBeforeChristmas() {
     return this.#date <= DAY.christmas;
   }
 

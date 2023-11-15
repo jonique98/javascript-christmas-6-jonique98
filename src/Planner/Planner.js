@@ -41,7 +41,7 @@ class Planner {
   }
 
   dailyBenefit() {
-    if (this.#date.dateIsWeekend()) return this.weekendBenefit();
+    if (this.#date.isWeekend()) return this.weekendBenefit();
     return this.weekdayBenefit();
   }
 
@@ -66,7 +66,7 @@ class Planner {
   }
 
   christmasBenefit() {
-    if (!this.#date.dateIsBeforeChristmas()) return SIGN.emptyString;
+    if (!this.#date.isBeforeChristmas()) return SIGN.emptyString;
     const christmasBenefit = this.#benefits.christmasDiscount(
       this.#date.christmasLeftDate()
     );
@@ -77,7 +77,7 @@ class Planner {
 
   specialBenefit() {
     const specialBenefit = this.#benefits.specialDiscount(
-      this.#date.dateIsSpecialDay()
+      this.#date.isSpecialDay()
     );
     if (specialBenefit === 0) return SIGN.emptyString;
     return `${BENEFITMESSAGE.special}${specialBenefit.toLocaleString()}${

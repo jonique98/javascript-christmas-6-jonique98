@@ -8,7 +8,7 @@ describe("Date", () => {
     date = new Date(1);
 
     // when
-    const isWeekend = date.dateIsWeekend();
+    const isWeekend = date.isWeekend();
 
     // then
     expect(isWeekend).toBe(true);
