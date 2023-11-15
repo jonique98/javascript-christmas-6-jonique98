@@ -46,4 +46,15 @@ describe("Date", () => {
     // then
     expect(isSpecialDay).toBe(false);
   });
+
+  test("크리스마스 전 테스트", () => {
+    // given
+    date = new Date(24);
+
+    // when
+    const isBeforeChristmas = date.isBeforeChristmas();
+
+    // then
+    expect(isBeforeChristmas).toBe(true);
+  });
 });
