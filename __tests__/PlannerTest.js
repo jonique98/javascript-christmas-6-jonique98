@@ -8,12 +8,12 @@ describe("Planner 클래스 메소드 테스트", () => {
   });
 
   const weekend = "1";
-  const weekdayAfterChristmas = "26";
-
-  const weekday = "12";
   const weekendAfterChristmas = "29";
 
-  const specialDayBeforeChristmas = "25";
+  const weekday = "12";
+  const weekdayAfterChristmas = "27";
+
+  const specialDay = "25";
   const specialDayAfterChristmas = "31";
 
   const benefitMenu =
@@ -71,6 +71,48 @@ describe("Planner 클래스 메소드 테스트", () => {
 
     planner.initDate(weekday);
     planner.takeOrder(noDesertMenu);
+    expect(planner.benefits()).toEqual(result);
+  });
+
+  test("특별 할인 테스트", () => {
+    const result = [
+      "평일 할인 -12,138원",
+      "크리스마스 할인 -3,400원",
+      "특별 할인 -1,000원",
+      "증정 이벤트 -25,000원",
+    ];
+
+    planner.initDate(specialDay);
+    planner.takeOrder(benefitMenu);
+    expect(planner.benefits()).toEqual(result);
+  });
+
+  test("크리스마스 이후 주중 할인 테스트", () => {
+    const result = ["평일 할인 -12,138원", "", "", "증정 이벤트 -25,000원"];
+
+    planner.initDate(weekdayAfterChristmas);
+    planner.takeOrder(benefitMenu);
+    expect(planner.benefits()).toEqual(result);
+  });
+
+  test("크리스마스 이후 주말 할인 테스트", () => {
+    const result = ["주말 할인 -12,138원", "", "", "증정 이벤트 -25,000원"];
+
+    planner.initDate(weekendAfterChristmas);
+    planner.takeOrder(benefitMenu);
+    expect(planner.benefits()).toEqual(result);
+  });
+
+  test("크리스마스 이후 특별 할인 테스트", () => {
+    const result = [
+      "평일 할인 -12,138원",
+      "",
+      "특별 할인 -1,000원",
+      "증정 이벤트 -25,000원",
+    ];
+
+    planner.initDate(specialDayAfterChristmas);
+    planner.takeOrder(benefitMenu);
     expect(planner.benefits()).toEqual(result);
   });
 });
