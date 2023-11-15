@@ -35,4 +35,12 @@ describe("Order 클래스 메소드 테스트", () => {
     // then
     expect(validate).toThrow();
   });
+
+  test("음료만 주문한 경우 validate 테스트", () => {
+    // when
+    const validate = () => new Order(onlyBeverageMenu);
+
+    // then
+    expect(validate).toThrow();
+  });
 });
