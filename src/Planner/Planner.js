@@ -35,7 +35,7 @@ class Planner {
     totalBenefits.push(this.specialBenefit());
     totalBenefits.push(this.giveawayBenefit());
 
-    if (totalBenefits.every(benefit => benefit === SIGN.emptyString))
+    if (totalBenefits.every((benefit) => benefit === SIGN.emptyString))
       return [SIGN.noBenefit];
     return totalBenefits;
   }
